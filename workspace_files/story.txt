@@ -1,0 +1,6 @@
+Once upon a time, there was lady who was very curious and inquisitive, she just want to know how things work behind the scene.
+eventually she had an opportunity to hop into the worldd of programming for the first time.
+she started with python, now she codes in python every day.
+one day, she discovered file handling.
+it opened up a whole new world of possibilities
+the end.

@@ -258,65 +258,63 @@ file_path
 
 
 # #working with multple files at once.
-# #sometimes you need to read from one file and write to another at the same time.
+# # #sometimes you need to read from one file and write to another at the same time.
 
-from pathlib import Path
-workspace = Path("workspace_files")
-input_file = workspace/ "original.txt"
-output_file = workspace/ "processed.txt"
+# from pathlib import Path
+# workspace = Path("workspace_files")
+# input_file = workspace/ "original.txt"
+# output_file = workspace/ "processed.txt"
 
-#create an input file with some text
-sample_text = """hello world
-python programming
-file handling tutorial
-learning is fun
-"""
-
-with open(input_file, "w", encoding ="utf-8") as f:
-    f.write(sample_text)
-
-print("created input file")
-
-#process the file: read from input, write processed version to output.
-with open(input_file, "r", encoding= "utf-8") as infile,\
-     open(output_file, "w", encoding= "utf-8") as outfile:
-
-    line_number = 1
-    for line in infile:
-        #process each line: make it uppercase and add linne numbers:
-        processed_line = f"line {line_number}: {line.strip().upper()}\n"
-        outfile.write(processed_line)
-        line_number +=1
-
-
-print("file processing complete!")
-
-# show the results.
-print("\nOriginal File:")
-with open(input_file, "r", encoding= "utf-8") as f:
-    print(f.read())
-
-print("\nProcessed File:")
-with open(output_file, "r", encoding ="utf-8") as f:
-    print(f.read())
-
-#output to expect:
-"""
-created input file
-file processing complete!
-
-Original file:
-hello world
-python programming
-file handling tutorial
-learning is fun
-
-# Processed aFile:
-# Line 1: HELLO WORLD
-# Line 2: PYTHON PROGRAMMING
-# Line 3: FILE HANDLING TUTORILA
-# Line 4: LEARNING IS FUN.
+# #create an input file with some text
+# sample_text = """hello world
+# python programming
+# file handling tutorial
+# learning is fun
 # """
+
+# with open(input_file, "w", encoding ="utf-8") as f:
+#     f.write(sample_text)
+
+# print("created input file")
+
+# #process the file: read from input, write processed version to output.
+# with open(input_file, "r", encoding= "utf-8") as infile,\
+#      open(output_file, "w", encoding= "utf-8") as outfile:
+
+#     line_number = 1
+#     for line in infile:
+#         #process each line: make it uppercase and add line numbers:
+#         processed_line = f"line {line_number}: {line.strip().upper()}\n"
+#         outfile.write(processed_line)
+#         line_number +=1
+# print("file processing complete!")
+
+# # show the results.
+# print("\nOriginal File:")
+# with open(input_file, "r", encoding= "utf-8") as f:
+#     print(f.read())
+
+# print("\nProcessed File:")
+# with open(output_file, "r", encoding ="utf-8") as f:
+#     print(f.read())
+
+# #output to expect:
+# """
+# created input file
+# file processing complete!
+
+# Original file:
+# hello world
+# python programming
+# file handling tutorial
+# learning is fun
+
+# # Processed aFile:
+# # Line 1: HELLO WORLD
+# # Line 2: PYTHON PROGRAMMING
+# # Line 3: FILE HANDLING TUTORIAL
+# # Line 4: LEARNING IS FUN.
+# # """
 
 # #Moving inside a file.
 # #sometimes you want to jump to a specific part of a file instead of reading from beginning
@@ -325,7 +323,7 @@ learning is fun
 # workspace = Path("workspace_files")
 # file_path = workspace/"story.txt"
 
-# #create a smaple story file.
+# # #create a smaple story file.
 # story = """Once upon a time, there was lady who was very curious and inquisitive, she just want to know how things work behind the scene.
 # eventually she had an opportunity to hop into the worldd of programming for the first time.
 # she started with python, now she codes in python every day.
@@ -349,7 +347,7 @@ learning is fun
 #     print(f"current position in file: {current_position}")
 #     #jump to the beginning
 #     f.seek(0)
-#     print(f"after seeking to beginning: position{f.tell()}")
+#     print(f"after seeking to beginning: position {f.tell()}")
 #    #jump to position 50 and read from there.
 #     f.seek(50)
 #     rest_of_line = f.readline()
@@ -367,3 +365,4 @@ learning is fun
 #     #- using the wrong file mode("w" overwrites everything!)
 #     #- forgetting to specify enncoding (use encoding ="utf-8")
 #     #- not understanding the difference between 'r', 'w', and 'a' modes.
+
